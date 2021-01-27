@@ -1,9 +1,37 @@
-.pulse:hover, 
-.pulse:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em rgba(#fff,0);
+@keyframes fade-in {
+  from {
+      visibility: hidden;
+      opacity: 0;
+  }
+  1% {
+      visibility: visible;
+      opacity: 0;
+  }
+  to {
+      visibility: visible;
+      opacity: 1;
+  }
 }
 
-@keyframes pulse {
-  0% { box-shadow: 3px 4px 43px 17px rgba(0,0,0,0.71); }
+.fade-in {
+  animation: fade-in .3s ease-in forwards;
+}
+
+@keyframes fade-out {
+  from {
+      visibility: visible;
+      opacity: 1;
+  }
+  99% {
+      visibility: visible;
+      opacity: 0;
+  }
+  to {
+      visibility: hidden;
+      opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fade-out .3s ease-in forwards;
 }

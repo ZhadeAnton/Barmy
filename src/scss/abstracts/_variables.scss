@@ -2,8 +2,14 @@
 $color-white: #ffffff;
 $color-black: #000000;
 $color-grey: #313131;
-$heading-red: #ff5042;
+$color-red: #ff5042;
 $desc-blue: #95a7ff;
+
+/* Animations properties */
+$header-transition: .3s;
+
+/* Shadows */
+$shadow: 1px -1px 81px 11px rgba(255,80,66,0.4);
 
 /* Container width */
 $container-width: 147rem;

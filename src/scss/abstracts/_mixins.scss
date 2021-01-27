@@ -2,19 +2,17 @@
     color: $color;
     font-family: $outrunfuture-font;
     display: inline;
-    background-image: url('@/img/button-bg.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
+    background-color: transparent;
     font-size: 1.8rem;
-    padding: 1.9rem 6.5rem;
     overflow: hidden;
     cursor: pointer;
-    transition: transform .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    border: none;
+    outline: none;
+    position: relative;
 
     &:hover {
-        transform: scale(1.1);
-        box-shadow: 3px 4px 43px 17px rgba(0,0,0,0.71);
+        color: $color-red;
     }
 }
 

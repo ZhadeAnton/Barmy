@@ -31,7 +31,14 @@ body {
     font-family: $montserrat-font;
     font-size: 1.4rem;
     line-height: 3.6rem;
+    overflow: hidden;
+
+    &.noscroll {
+        overflow: hidden;
+    }
 }
+
+/* / Supports classes / */
 
 .container {
     max-width: $container-width;
@@ -41,17 +48,17 @@ body {
 /* / Visibility /  */ 
 .hide-for-mobile {
     @include breakpoint-down(medium) {
-        display: none;
+        display: none !important;
+        visibility: hidden;
     }
 }
 
 .hide-for-desctop {
     @include breakpoint-up(large) {
-        display: none; 
+        display: none !important;
+        visibility: hidden;
     }
 }
-
-/* / Supports classes / */
 
 .flex {
     display: flex;
@@ -113,4 +120,8 @@ body {
 
 .mt-big {
     margin-top: clamp(5.5rem, 10vw, 11rem);
+}
+
+.m-sides-sm {
+    margin: inherit 2rem;
 }
