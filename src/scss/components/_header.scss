@@ -1,0 +1,48 @@
+.header {
+    background-image: url('@/img/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+    &__container {
+        width: 100%;
+        height: 100%;
+    } 
+
+    &__menu {
+        width: 100%;
+        max-width: 63rem;
+
+        &--link {
+            color: $color-white;
+            font-family: $outrunfuture-font;
+            text-transform: uppercase;
+            font-size: clamp(1.4rem, 10vw,2.4rem);
+        }
+    }
+
+    &__graffiti {
+        width: 100%;
+        height: auto;
+        padding: 0 2rem;
+    }
+
+    .graffiti__image--1 {
+        max-width: 90rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .graffiti__image--2 {
+        max-width: 50rem;
+        width: 100%;
+        height: auto;
+        padding: 0 3rem;
+    }
+
+    &__btn {
+        @include button($color-black);
+    }
+}

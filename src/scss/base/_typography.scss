@@ -1,0 +1,17 @@
+%heading {
+    font-size: 6rem;
+    font-family: $outrunfuture-font;
+    line-height: 3rem;
+    color: $color-white;
+}
+
+.heading-red {
+    @extend heading;
+        color: $heading-red;
+}
+
+%sub-heading {
+    @extend heading;
+    color: $desc-blue;
+    font-size: 2.4rem;
+}
