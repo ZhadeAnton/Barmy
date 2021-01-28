@@ -12,6 +12,7 @@
 .heading-red {
     @extend %heading;
         color: $color-red;
+        text-transform: uppercase;
 }
 
 .sub-heading {

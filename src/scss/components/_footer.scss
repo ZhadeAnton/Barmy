@@ -1,0 +1,60 @@
+.footer {
+    background-image: url('@/img/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 90rem;
+    position: relative;
+    z-index: 20;
+
+    @include breakpoint-down('medium') {
+        height: 60rem;
+
+        &__bottom {
+            bottom: 5rem;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0, .7);
+        z-index: -1;
+    }
+
+    &__center {
+        margin: 0 2rem;
+
+        &--img {
+            width: 100%;
+            max-width: 45rem;
+            height: auto;
+        }
+
+        &--btn {
+            @include button($color-red, $color-black);
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        bottom: 10rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: $outrunfuture-font;
+        font-size: clamp(1.2rem, 0.7500rem + 1.2500vw, 1.8rem);
+
+        @include breakpoint-down('medium') {
+            bottom: 5rem;
+        }
+    }
+}
