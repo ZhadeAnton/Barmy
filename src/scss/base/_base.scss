@@ -29,8 +29,10 @@ html {
 
 body {
     font-family: $montserrat-font;
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 1.0500rem + 0.4167vw, 1.4rem);
+    color: $color-white;
     line-height: 3.6rem;
+    overflow: auto;
 
     &.noscroll {
         overflow: hidden;
@@ -119,8 +121,4 @@ body {
 
 .mt-big {
     margin-top: clamp(5.5rem, 10vw, 11rem);
-}
-
-.m-sides-sm {
-    margin: inherit 2rem;
 }
