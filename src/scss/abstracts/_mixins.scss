@@ -3,7 +3,7 @@
     font-family: $outrunfuture-font;
     display: inline;
     background-color: transparent;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 1.1000rem + 0.8333vw, 1.8rem);
     overflow: hidden;
     cursor: pointer;
     transition: all .2s ease-in-out;
