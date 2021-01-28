@@ -4,7 +4,7 @@
     background-position: center center;
     background-size: cover;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
 
     &__container {
@@ -13,6 +13,7 @@
 
         @include breakpoint-down('medium') {
             justify-content: center;
+            height: 100vh;
         }
     } 
 

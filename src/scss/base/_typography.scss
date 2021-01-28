@@ -1,17 +1,22 @@
 %heading {
-    font-size: 6rem;
+    font-size: clamp(4rem, 2.5000rem + 4.1667vw, 6rem);
     font-family: $outrunfuture-font;
-    line-height: 3rem;
+    line-height: 7rem;
     color: $color-white;
 }
 
+.heading {
+    @extend %heading;
+}
+
 .heading-red {
-    @extend heading;
+    @extend %heading;
         color: $color-red;
 }
 
-%sub-heading {
-    @extend heading;
+.sub-heading {
+    @extend %heading;
     color: $desc-blue;
-    font-size: 2.4rem;
+    font-size: clamp(2.4rem, 3.0000rem + -1.6667vw, 1.6rem);
+    line-height: 3rem;
 }
