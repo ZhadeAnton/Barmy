@@ -65,7 +65,11 @@ const createDots = function () {
   slider.slides.forEach(function (_, i) {
     slider.dotsContainer.insertAdjacentHTML(
       'beforeend',
-      `<button class="dots__dot" data-slide="${i}"></button>`
+      `<button class="dots__dot" data-slide="${i}">
+        <div class="dots__dot--bg" style="background-image: url(slider-${
+          i + 1
+        }.jpg)"></div>
+      </button>`
     );
   });
 };

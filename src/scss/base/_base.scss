@@ -32,7 +32,7 @@ body {
     font-size: clamp(1.2rem, 1.0500rem + 0.4167vw, 1.4rem);
     color: $color-white;
     line-height: 3.6rem;
-    overflow: auto;
+    overflow-x: hidden;
 
     &.noscroll {
         overflow: hidden;
