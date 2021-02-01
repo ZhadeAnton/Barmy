@@ -1,4 +1,5 @@
 import './scss/main.scss';
-import './slider.js';
-import './about.js';
-import './header.js';
+import './js/slider.js';
+import './js/about.js';
+import './js/header.js';
+import './js/popup.js';

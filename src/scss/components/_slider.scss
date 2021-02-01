@@ -21,7 +21,7 @@
 				content: '';
 				@extend %abs;
 				background-color: $slider-mask;
-				z-index: 100;
+				z-index: 10;
 			}
 		}
 
@@ -57,7 +57,7 @@
 	width: 80%;
 	height: 100%;
 	transform: translateY(10rem);
-	z-index: 1000;
+	z-index: 11;
 
 	@include breakpoint-down('medium') {
 		transform: translateY(7rem)
@@ -94,7 +94,7 @@
 				content: '';
 				@extend %abs;
 				background-color: $slider-mask;
-				z-index: 100;
+				z-index: 10;
 			}
 		}
 	}
@@ -126,7 +126,7 @@
 			content: '';
 			@extend %abs;
 			background-color: transparent;
-			z-index: 100;
+			z-index: 10;
 			border: 10px solid $color-red;
 		}
 	}
@@ -140,7 +140,7 @@
 	top: 50%;
 	width: 5rem;
 	height: 5rem;
-	z-index: 100;
+	z-index: 10;
 	cursor: pointer;
 
 	@include breakpoint-down('medium') {
