@@ -1,12 +1,15 @@
 .slider {
-	height: 90vh;
+	height: 68vh;
 	width: 100%;
-	position: relative;
+
+	@include breakpoint-down('medium') {
+		height: 50vh;
+	}
 
 	&__item {
-		@extend %abs;
-		transition: transform .35s ease-in-out;
-
+		position: relative;
+		width: 100%;
+		height: 90vh;
 
 		&--bg {
 			@extend %abs;
@@ -17,76 +20,100 @@
 			&:after {
 				content: '';
 				@extend %abs;
-				background-color: rgba(0, 0, 0, .25);
+				background-color: $slider-mask;
+				z-index: 100;
+			}
+		}
+
+		&--info {
+			width: 100%;
+			height: 100%;
+			@extend %flex-center;
+			flex-direction: column;
+			text-align: center;
+
+			@include breakpoint-down('medium') {
+				justify-content: start;
+				padding: clamp(4rem, -6.0000rem + 25.0000vw, 20rem) 2rem 0 2rem;
+			}
+		}
+
+		&--title {
+			@extend %margin-bottom-small;
+		}
+
+		&--text {
+			max-width: 58rem;
+			@extend %margin-bottom-medium;
+		}
+
+		&--btn {
+			@include button($color-black, $color-red);
+		}
+	}
+}
+
+.slider-nav {
+	width: 80%;
+	height: 100%;
+	transform: translateY(10rem);
+	z-index: 1000;
+
+	@include breakpoint-down('medium') {
+		transform: translateY(7rem)
+	}
+	
+	@include breakpoint-down('small') {
+		transform: translateY(6rem);
+		width: 90%;
+	}
+
+	&__item {
+		position: relative;
+		height: 20vh;
+		width: 30vw;
+		cursor: pointer;
+
+		@include breakpoint-down('medium') {
+			height: 15vh;
+			width: 20vw;
+		}
+
+		@include breakpoint-down('small') {
+			height: 10vh;
+			width: 10vw;
+		}
+
+		&--bg {
+			@extend %abs;
+			background-position: center;
+			background-size: cover;
+			z-index: -1;
+
+			&:after {
+				content: '';
+				@extend %abs;
+				background-color: $slider-mask;
 				z-index: 100;
 			}
 		}
 	}
-
-	&__center {
-		max-width: 48rem;
-
-		&--title {
-
-		}
-
-		&--text {
-
-		}
-	}
 }
 
-.slideshow {
+.slick-current .slider-nav__item{
 	position: relative;
-	width: 100%;
-	height: 100%;
+	height: 20vh;
+	width: 30vw;
+	cursor: pointer;
 
-	&--left-arrow {
-		position: absolute;
-		width: 5rem;
-		height: 5rem;
-		top: 50%;
-		left: 10%;
-		cursor: pointer;
+	@include breakpoint-down('medium') {
+		height: 15vh;
+		width: 20vw;
 	}
 
-	&--right-arrow {
-		position: absolute;
-		width: 5rem;
-		height: 5rem;
-		top: 50%;
-		right: 10%;
-		cursor: pointer;
-	}
-
-	&__dots {
-		position: absolute;
-		bottom: -15%;
-		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		height: auto;
-		z-index: 100000;
-	}
-}
-
-.dots__dot {
-	width: 40rem;
-	height: 30rem;
-	z-index: 1001;
-	position: relative;
-	border: none;
-	outline: none;
-
-	&:after {
-		content: '';
-		@extend %abs;
-		background-color: rgba(0, 0, 0, .56);
-		z-index: 100;
-	}
-
-	&:not(:last-child) {
-		margin-right: 1rem;
+	@include breakpoint-down('small') {
+		height: 10vh;
+		width: 10vw;
 	}
 
 	&--bg {
@@ -94,22 +121,98 @@
 		background-position: center;
 		background-size: cover;
 		z-index: -1;
+
+		&:after {
+			content: '';
+			@extend %abs;
+			background-color: transparent;
+			z-index: 100;
+			border: 10px solid $color-red;
+		}
 	}
 }
 
-.dots__dot--active {
-	background-color: none;
-	
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		border: 8px solid red;
-		box-sizing: border-box;
-		width: 100%;
-		height: 100%;
-		transition: all .35s ease-in-out;
-		background-color: rgba(0, 0, 0, 0);
+.slick-arrow {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	top: 50%;
+	width: 5rem;
+	height: 5rem;
+	z-index: 100;
+	cursor: pointer;
+
+	@include breakpoint-down('medium') {
+		width: 4rem;
+		height: 4rem;
+	}
+}
+
+.slick-prev {
+	left: -10%;
+	background-image: url('@/img/right-arrow.svg');
+}
+
+.slick-next {
+	right: -10%;
+	background-image: url('@/img/right-arrow.svg');
+	transform: rotate(180deg);
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: -35%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+
+	@include breakpoint-down('small') {
+		bottom: -40%;
+	}
+
+	li {
+		display: flex;
+		background-color: $color-white;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		text-align: center;
+		cursor: pointer;
+
+		@include breakpoint-down('small') {
+			width: 3rem;
+			height: 3rem;
+		}
+
+		button {
+			width: 100%;
+			height: 100%;
+			font-family: $outrunfuture-font;
+			font-size: 1.2rem;
+			cursor: pointer;
+
+			@include breakpoint-down('small') {
+				font-size: 1rem;
+			}
+		}
+
+		&.slick-active {
+			position: relative;
+			background-color: $color-red;
+
+			&::after {
+				content: '';
+				@extend %abs;
+			}
+		}
+	}
+
+	li:not(:last-child) {
+		margin-right: 3rem;
+
+		@include breakpoint-down('small') {
+			margin-right: 2rem;
+		}
 	}
 }

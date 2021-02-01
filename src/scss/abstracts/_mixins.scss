@@ -37,6 +37,7 @@
     }
 }
 
+/* Support's classes */
 %abs {
 	position: absolute;
 	top: 0;
@@ -45,9 +46,16 @@
 	width: 100%;
 }
 
+/* Flex extends */
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 // Media queries
 @media (min-width: 64em) {
-    //styele
+   
 }
 
 // --> 640px, 1024px, 1400px -->
@@ -67,3 +75,14 @@ $breakpoints-down: ("small": "39.9375em","medium": "63.9375em", "large": "87.437
         @content;
     }
 }
+
+/* Clamped values */
+%margin-bottom-small {
+    margin-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+
+%margin-bottom-medium {
+    margin-bottom: clamp(3rem, 10vw, 6rem);
+}
+
+/* Clamped values typography*/

@@ -18,6 +18,12 @@ a, a:visited, a:active {
     display: inline-block;
 }
 
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
 li {
     list-style: none;
 }
@@ -33,6 +39,10 @@ body {
     color: $color-white;
     line-height: 3.6rem;
     overflow-x: hidden;
+
+    @include breakpoint-down('medium') {
+        line-height: 3rem;
+    }
 
     &.noscroll {
         overflow: hidden;

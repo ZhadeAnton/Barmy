@@ -2,6 +2,7 @@
 $color-white: #ffffff;
 $color-black: #000000;
 $color-grey: #313131;
+$color-grey-light: #aaadab;
 $color-red: #ff5042;
 $desc-blue: #95a7ff;
 
@@ -10,6 +11,9 @@ $header-transition: .3s;
 
 /* Shadows */
 $shadow: 1px -1px 81px 11px rgba(255,80,66,0.4);
+
+/* Background mask */
+$slider-mask: rgba(0, 0, 0, .44);
 
 /* Container width */
 $container-width: 147rem;
