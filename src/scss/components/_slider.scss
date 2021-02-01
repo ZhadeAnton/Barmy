@@ -1,0 +1,218 @@
+.slider {
+	height: 68vh;
+	width: 100%;
+
+	@include breakpoint-down('medium') {
+		height: 50vh;
+	}
+
+	&__item {
+		position: relative;
+		width: 100%;
+		height: 90vh;
+
+		&--bg {
+			@extend %abs;
+			background-position: center;
+			background-size: cover;
+			z-index: -1;
+
+			&:after {
+				content: '';
+				@extend %abs;
+				background-color: $slider-mask;
+				z-index: 100;
+			}
+		}
+
+		&--info {
+			width: 100%;
+			height: 100%;
+			@extend %flex-center;
+			flex-direction: column;
+			text-align: center;
+
+			@include breakpoint-down('medium') {
+				justify-content: start;
+				padding: clamp(4rem, -6.0000rem + 25.0000vw, 20rem) 2rem 0 2rem;
+			}
+		}
+
+		&--title {
+			@extend %margin-bottom-small;
+		}
+
+		&--text {
+			max-width: 58rem;
+			@extend %margin-bottom-medium;
+		}
+
+		&--btn {
+			@include button($color-black, $color-red);
+		}
+	}
+}
+
+.slider-nav {
+	width: 80%;
+	height: 100%;
+	transform: translateY(10rem);
+	z-index: 1000;
+
+	@include breakpoint-down('medium') {
+		transform: translateY(7rem)
+	}
+	
+	@include breakpoint-down('small') {
+		transform: translateY(6rem);
+		width: 90%;
+	}
+
+	&__item {
+		position: relative;
+		height: 20vh;
+		width: 30vw;
+		cursor: pointer;
+
+		@include breakpoint-down('medium') {
+			height: 15vh;
+			width: 20vw;
+		}
+
+		@include breakpoint-down('small') {
+			height: 10vh;
+			width: 10vw;
+		}
+
+		&--bg {
+			@extend %abs;
+			background-position: center;
+			background-size: cover;
+			z-index: -1;
+
+			&:after {
+				content: '';
+				@extend %abs;
+				background-color: $slider-mask;
+				z-index: 100;
+			}
+		}
+	}
+}
+
+.slick-current .slider-nav__item{
+	position: relative;
+	height: 20vh;
+	width: 30vw;
+	cursor: pointer;
+
+	@include breakpoint-down('medium') {
+		height: 15vh;
+		width: 20vw;
+	}
+
+	@include breakpoint-down('small') {
+		height: 10vh;
+		width: 10vw;
+	}
+
+	&--bg {
+		@extend %abs;
+		background-position: center;
+		background-size: cover;
+		z-index: -1;
+
+		&:after {
+			content: '';
+			@extend %abs;
+			background-color: transparent;
+			z-index: 100;
+			border: 10px solid $color-red;
+		}
+	}
+}
+
+.slick-arrow {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	top: 50%;
+	width: 5rem;
+	height: 5rem;
+	z-index: 100;
+	cursor: pointer;
+
+	@include breakpoint-down('medium') {
+		width: 4rem;
+		height: 4rem;
+	}
+}
+
+.slick-prev {
+	left: -10%;
+	background-image: url('@/img/right-arrow.svg');
+}
+
+.slick-next {
+	right: -10%;
+	background-image: url('@/img/right-arrow.svg');
+	transform: rotate(180deg);
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: -35%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+
+	@include breakpoint-down('small') {
+		bottom: -40%;
+	}
+
+	li {
+		display: flex;
+		background-color: $color-white;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		text-align: center;
+		cursor: pointer;
+
+		@include breakpoint-down('small') {
+			width: 3rem;
+			height: 3rem;
+		}
+
+		button {
+			width: 100%;
+			height: 100%;
+			font-family: $outrunfuture-font;
+			font-size: 1.2rem;
+			cursor: pointer;
+
+			@include breakpoint-down('small') {
+				font-size: 1rem;
+			}
+		}
+
+		&.slick-active {
+			position: relative;
+			background-color: $color-red;
+
+			&::after {
+				content: '';
+				@extend %abs;
+			}
+		}
+	}
+
+	li:not(:last-child) {
+		margin-right: 3rem;
+
+		@include breakpoint-down('small') {
+			margin-right: 2rem;
+		}
+	}
+}
